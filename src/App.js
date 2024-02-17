@@ -1,5 +1,5 @@
 import './App.css';
-import profilePic from './prof.jpg';
+import profilePic from './girl1.jpg';
 import { FaCaretDown } from "react-icons/fa6";
 import { useState } from 'react';
 
@@ -53,7 +53,7 @@ function App() {
 
       {/* profile bio */}
       <div className='profileBio'>
-        <h3>Courtney Styles</h3>
+        <h3>Amara Pendo</h3>
         <p className='career'>Photographer</p>
         <p>🏆 2023 Best photographer of the year</p>
         <p>Founder of <span className='blueLink'>@photosYellow</span></p>
