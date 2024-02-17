@@ -10,7 +10,7 @@ function App() {
   function handleFollow() {
     setIsClicked(!isClicked);
     setFollowers(followers + 1);
-    // if (isClicked) setIsClicked(followers - 1);
+    if (isClicked) setFollowers(followers - 1);
   }
 
   return (
