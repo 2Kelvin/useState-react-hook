@@ -10,10 +10,10 @@
 
 .App .picAndFollow .imageDiv {
   border-radius: 50%;
-  border: 4px solid turquoise;
   margin-right: 1rem;
   display: grid;
   place-content: center;
+  background: linear-gradient(150deg, #5500ff, #fdad00);
 }
 
 .App .picAndFollow .imageDiv img {
@@ -23,6 +23,8 @@
   object-fit: cover;
   padding: 0;
   margin: 0.2rem;
+  cursor: pointer;
+  border: 3px solid white;
 }
 
 .App .picAndFollow .followDivContainer .statsDiv {
@@ -41,7 +43,7 @@
 .App .picAndFollow .followDivContainer .statsDiv .followingStatsDiv p:last-of-type {
   margin-top: 0;
   font-size: 0.9rem;
-
+  opacity: 0.5;
 }
 
 .App .picAndFollow .followDivContainer .statsDiv .postsStatsDiv p:first-of-type,
@@ -49,6 +51,16 @@
 .App .picAndFollow .followDivContainer .statsDiv .followingStatsDiv p:first-of-type {
   margin-bottom: 0.2rem;
   font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.App .picAndFollow .followDivContainer .buttonsDiv button {
+  background-color: #3897F1;
+  border: none;
+  color: white;
+  padding: 0.4rem 0;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 .App .picAndFollow .followDivContainer .buttonsDiv {
@@ -58,4 +70,13 @@
 
 .App .picAndFollow .followDivContainer .buttonsDiv .followBtn {
   margin-right: 0.5rem;
+  font-weight: 600;
+}
+
+.App .profileBio .career {
+  opacity: 0.5;
+}
+
+.blueLink {
+  color: #1564ad;
 }
