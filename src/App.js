@@ -7,12 +7,12 @@ function App() {
     <div className="App">
       {/* profile picture & following */}
       <div className='picAndFollow'>
-        <div className='imageWrapper'>
+        <div className='imageDiv'>
           <img src={profilePic} alt='profile' />
         </div>
 
-        <div className='followWrapper'>
-          <div className='stats'>
+        <div className='followDivContainer'>
+          <div className='statsDiv'>
             <div className='postsStatsDiv'>
               <p>3,617</p>
               <p>posts</p>
@@ -24,13 +24,13 @@ function App() {
             </div>
 
             <div className='followingStatsDiv'>
-              <p>969</p>
+              <p>277</p>
               <p>following</p>
             </div>
           </div>
 
           <div className='buttonsDiv'>
-            <button className='followBtn'></button>
+            <button className='followBtn'>Follow</button>
             <button> <FaCaretDown /> </button>
           </div>
         </div>
