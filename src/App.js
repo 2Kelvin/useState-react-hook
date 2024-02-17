@@ -1,8 +1,18 @@
 import './App.css';
 import profilePic from './prof.jpg';
 import { FaCaretDown } from "react-icons/fa6";
+import { useState } from 'react';
 
 function App() {
+  const [isClicked, setIsClicked] = useState(false);
+  const [followers, setFollowers] = useState(499);
+
+  function handleFollow() {
+    setIsClicked(!isClicked);
+    setFollowers(followers + 1);
+    // if (isClicked) setIsClicked(followers - 1);
+  }
+
   return (
     <div className="App">
       {/* profile picture & following */}
@@ -19,7 +29,7 @@ function App() {
             </div>
 
             <div className='followersStatsDiv'>
-              <p>500</p>
+              <p>{followers}</p>
               <p>followers</p>
             </div>
 
@@ -30,8 +40,13 @@ function App() {
           </div>
 
           <div className='buttonsDiv'>
-            <button className='followBtn'>Follow</button>
-            <button> <FaCaretDown /> </button>
+            <button
+              className={isClicked ? 'followed' : 'followBtn'}
+              onClick={handleFollow}
+            >
+              {isClicked ? 'Following' : 'Follow'}
+            </button>
+            <button className='caretBtn'> <FaCaretDown /> </button>
           </div>
         </div>
       </div>

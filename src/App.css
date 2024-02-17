@@ -13,7 +13,7 @@
   margin-right: 1rem;
   display: grid;
   place-content: center;
-  background: linear-gradient(150deg, #5500ff, #fdad00);
+  background: linear-gradient(190deg, #5500ff, #fdad00);
 }
 
 .App .picAndFollow .imageDiv img {
@@ -55,7 +55,6 @@
 }
 
 .App .picAndFollow .followDivContainer .buttonsDiv button {
-  background-color: #3897F1;
   border: none;
   color: white;
   padding: 0.4rem 0;
@@ -71,6 +70,17 @@
 .App .picAndFollow .followDivContainer .buttonsDiv .followBtn {
   margin-right: 0.5rem;
   font-weight: 600;
+  background-color: #3897F1
+}
+
+.App .picAndFollow .followDivContainer .buttonsDiv .caretBtn {
+  background-color: #3897F1;
+}
+
+.App .picAndFollow .followDivContainer .buttonsDiv .followed {
+  background-color: #bbb;
+  margin-right: 0.5rem;
+  font-weight: 600;
 }
 
 .App .profileBio .career {
@@ -79,4 +89,5 @@
 
 .blueLink {
   color: #1564ad;
+  cursor: pointer;
 }
