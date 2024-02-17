@@ -77,10 +77,12 @@
   background-color: #3897F1;
 }
 
-.App .picAndFollow .followDivContainer .buttonsDiv .followed {
-  background-color: #bbb;
+.App .picAndFollow .followDivContainer .buttonsDiv .following {
+  background-color: transparent;
   margin-right: 0.5rem;
   font-weight: 600;
+  color: black;
+  border: 1px solid #ddd;
 }
 
 .App .profileBio .career {

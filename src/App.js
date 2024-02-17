@@ -41,7 +41,7 @@ function App() {
 
           <div className='buttonsDiv'>
             <button
-              className={isClicked ? 'followed' : 'followBtn'}
+              className={isClicked ? 'following' : 'followBtn'}
               onClick={handleFollow}
             >
               {isClicked ? 'Following' : 'Follow'}
