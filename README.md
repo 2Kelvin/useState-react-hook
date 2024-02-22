@@ -60,7 +60,7 @@ UseState allows 2 major things:
   setIsChecked(true);
   ```
 
-You can also initalize state variables using [objects](https://github.com/2Kelvin/useState-react-hook?tab=readme-ov-file#updating-objects-in-state) and [arrays](https://github.com/2Kelvin/useState-react-hook?tab=readme-ov-file#updating-arrays-in-state`).
+You can also initalize state variables using [objects](https://github.com/2Kelvin/useState-react-hook?tab=readme-ov-file#updating-objects-in-state) and [arrays](https://github.com/2Kelvin/useState-react-hook?tab=readme-ov-file#updating-arrays-in-state).
 
 `State is isolated and private (independent)` i.e. if you render the same component twice or more, each instance of the component carries with it it's own state; their states are not linked or shared at all. Changing one component's instance doesn't affect the other instances of the same component at all.
 
