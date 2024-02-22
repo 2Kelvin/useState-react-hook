@@ -8,9 +8,9 @@ State is a way for a component to remember something.
 
 UseState allows 2 major things:
 
-[x] Through the `state variable`, changes persist through renders. That is, unlike normal variables which when the component is rerendered loose all the updates and rerenders from scratch, state variable remembers it's last values even when the component is rerendered. State variables have memory even through renders i.e `state variables retain data even through renders`. A local /normal variable never retains state/memory so the component will not be rerendered with the new changes but will be rerendered afresh from the start.
+- [x] Through the `state variable`, changes persist through renders. That is, unlike normal variables which when the component is rerendered loose all the updates and rerenders from scratch, state variable remembers it's last values even when the component is rerendered. State variables have memory even through renders i.e `state variables retain data even through renders`. A local /normal variable never retains state/memory so the component will not be rerendered with the new changes but will be rerendered afresh from the start.
 
-[x] Through the state's `setter function`, when a state variable is changed setState function triggeres the component to be rerendered with the new changes. This is unlike regular functions where if a local variable is changed, there's no function to force the component to rerender with the new changes. `state setter function triggers a rerender whenever state changes`
+- [x] Through the state's `setter function`, when a state variable is changed setState function triggeres the component to be rerendered with the new changes. This is unlike regular functions where if a local variable is changed, there's no function to force the component to rerender with the new changes. `state setter function triggers a rerender whenever state changes`
 
 ### How to use useState
 
