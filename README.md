@@ -81,7 +81,7 @@ setUser({ name: "Hunt", gender: "M" });
 setUser({ ...user, name: "Derek" });
 ```
 
-This example right here:point_down: is okay because it's changing ALL the object properties. If it was only changing one or some of the object properties, that would be wrong since that's mutating the original object. To change some of the object properties and not all and still use it correctly to update state, use the **spread syntax**.
+The example below is okay because it's changing ALL the object properties. If it was only changing one or some of the object properties, that would be wrong since that's mutating the original object. To change some of the object properties and not all and still use it correctly to update state, use the **spread syntax**.
 
 ```javascript
 // updating state object by replacing it WHOLE (all of it's properties)
