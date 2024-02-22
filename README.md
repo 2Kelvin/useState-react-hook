@@ -66,4 +66,14 @@ You can also initalize state variables using [objects](https://github.com/2Kelvi
 
 ## Updating objects in state
 
+An object can be assigned to useState's state variable. However, `the setter function should update using a copy of the object or make a new object; it should NEVER mutate the original object stored in the state variable`. Treat the object assigned to state as **read-only**.
+
+Example of declaring and updating an object in state:
+
+```javascript
+const [user, setUser] = useState({ name: "July", gender: "F" });
+// updating state object by replacing it WHOLE (all of it's properties)
+setUser({ name: "Hunt", gender: "M" });
+```
+
 ## Updating arrays in state
