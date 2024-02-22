@@ -95,7 +95,7 @@ setUser(hunt);
 
 **_The spread syntax(...) is shallow, it only copies an object one level deep. To copy a nested property, you need to use it (...) again in the next nested level_**.
 
-Example of copying a deeply nested object and using it to update state using the setter function:
+Example of `copying a deeply nested object and using it to update state` using the setter function:
 
 ```javascript
 const [pc, setPc] = useState({
