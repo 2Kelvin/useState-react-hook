@@ -4,7 +4,7 @@
 
 ## Notes
 
-State is a way for a component to remember something.
+State is a way for telling a component to remember something.
 
 UseState allows 2 major things:
 
@@ -27,3 +27,37 @@ UseState allows 2 major things:
    Followers is the state variable, setFollowers is the setter function. variable followers keeps track of the number of followers in the app, it can be updated uding setFollowers setter function. When this change happens, a rerender of the component containing followers state variable happens with the updated followers count.
 
    This (**const [followers, setFollowers] = useState(300)**) is called `array destructuring`. _UseState returns an array of exactly two items: a variable & a function_. The state variable on the left is assigned to the state variable returned by useState & the setter function on the left is assigned to the setter function returned by useState. The value assigned to useState is the initial value of the state variable. In our example the followers state variable has the initial value of 300.
+
+### Updating a state variable
+
+- Updating a number state variable
+
+  ```javascript
+  const [followers, setFollowers] = useState(300);
+
+  <!-- increasing the follower count by 1 -->
+  setFollowers(followers + 1);
+
+  <!-- updating the followers to 1200 -->
+  setFollowers(1200);
+  ```
+
+- Updating a string state variable
+
+  ```javascript
+  const [status, setStatus] = useState('');
+
+  <!-- updating the status to pending -->
+  setStatus('pending...');
+  ```
+
+- Updating a boolean state variable
+
+  ```javascript
+  const [isChecked, setIsChecked] = useState(false);
+
+  <!-- updating isChecked to true -->
+  setIsChecked(true);
+  ```
+
+You can also initalize state variables using arrays and objects. 
