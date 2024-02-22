@@ -35,20 +35,20 @@ UseState allows 2 major things:
   ```javascript
   const [followers, setFollowers] = useState(300);
 
-  <!-- increasing the follower count by 1 -->
+  // increasing the follower count by 1
   setFollowers(followers + 1);
 
-  <!-- updating the followers to 1200 -->
+  // updating the followers to 1200
   setFollowers(1200);
   ```
 
 - Updating a string state variable
 
   ```javascript
-  const [status, setStatus] = useState('');
+  const [status, setStatus] = useState("");
 
-  <!-- updating the status to pending -->
-  setStatus('pending...');
+  // updating the status to pending
+  setStatus("pending...");
   ```
 
 - Updating a boolean state variable
@@ -56,8 +56,8 @@ UseState allows 2 major things:
   ```javascript
   const [isChecked, setIsChecked] = useState(false);
 
-  <!-- updating isChecked to true -->
+  // updating isChecked to true
   setIsChecked(true);
   ```
 
-You can also initalize state variables using arrays and objects. 
+You can also initalize state variables using arrays and objects.
