@@ -72,8 +72,31 @@ Example of declaring and updating an object in state:
 
 ```javascript
 const [user, setUser] = useState({ name: "July", gender: "F" });
+
 // updating state object by replacing it WHOLE (all of it's properties)
 setUser({ name: "Hunt", gender: "M" });
+
+// partially updating state object (only some of the properties)
+// using the spread (...) syntax
+setUser({ ...user, name: "Derek" });
 ```
 
+This example right here:point_down: is okay because it's changing ALL the object properties. If it was only changing one or some of the object properties, that would be wrong since that's mutating the original object. To change some of the object properties and not all and still use it correctly to update state, use the **spread syntax**.
+
+```javascript
+// updating state object by replacing it WHOLE (all of it's properties)
+// this creates a new object entirely since it changes all the object properties
+setUser({ name: "Hunt", gender: "M" });
+
+// it's the same code as this
+const hunt = { name: "Hunt", gender: "M" };
+setUser(hunt);
+```
+
+***The spread syntax(...) is shallow, it only copies an object one level deep. To copy a nested property, you need to use it (...) again in the next nested level***.
+
 ## Updating arrays in state
+
+```
+
+```
