@@ -9,8 +9,8 @@ function App() {
 
   function handleFollow() {
     setIsClicked(!isClicked);
-    setFollowers(followers + 1);
     if (isClicked) setFollowers(followers - 1);
+    else setFollowers(followers + 1);
   }
 
   return (
@@ -56,9 +56,9 @@ function App() {
         <h3>Amara Pendo</h3>
         <p className='career'>Photographer</p>
         <p>🏆 2023 Best photographer of the year</p>
-        <p>Founder of <span className='blueLink'>@photosYellow</span></p>
-        <p>Inquiries: <span className='blueLink'>courtney@email.com</span></p>
-        <span className='blueLink'>www.stylesPhotography.com</span>
+        <p>Founder of <span className='blueLink'>@BeautifulAfrica</span></p>
+        <p>Inquiries: <span className='blueLink'>pendo@email.com</span></p>
+        <span className='blueLink'>www.amaraphotography.com</span>
       </div>
     </div>
   );
