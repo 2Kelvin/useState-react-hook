@@ -4,7 +4,7 @@
 
 ## Notes
 
-State is a way for telling a component to remember something.
+`State is a way of telling a component to remember something between renders`.
 
 UseState allows 2 major things:
 
@@ -61,3 +61,5 @@ UseState allows 2 major things:
   ```
 
 You can also initalize state variables using arrays and objects.
+
+`State is isolated and private (independent)` i.e. if you render the same component twice or more, each instance of the component carries with it it's own state; their states are not linked or shared at all. Changing one component's instance doesn't affect the other instances of the same component at all.
