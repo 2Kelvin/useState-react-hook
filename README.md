@@ -93,7 +93,30 @@ const hunt = { name: "Hunt", gender: "M" };
 setUser(hunt);
 ```
 
-***The spread syntax(...) is shallow, it only copies an object one level deep. To copy a nested property, you need to use it (...) again in the next nested level***.
+**_The spread syntax(...) is shallow, it only copies an object one level deep. To copy a nested property, you need to use it (...) again in the next nested level_**.
+
+Example of copying a deeply nested object and using it to update state using the setter function:
+
+```javascript
+const [pc, setPc] = useState({
+  brand: "Dell",
+  color: "black",
+  specs: {
+    ram: "8GB",
+    cpu: "i5 12400",
+    gpu: "RTX 2070 Super",
+  },
+});
+
+// setting state with a copy object with an updated gpu property
+setPc({
+  ...pc,
+  specs: {
+    ...pc.specs,
+    gpu: "RX 6800XT",
+  },
+});
+```
 
 ## Updating arrays in state
 
