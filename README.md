@@ -118,6 +118,21 @@ setPc({
 });
 ```
 
+❌ Example of wrongly mutating state. This mutation is bad for 2 reasons:
+
+- It involves mutating the original state object which is not recommended. To fix this create a copy of the original object with the new changes or create an entirely new object.
+- It doesn't trigger a rerender. React doesn't know that the object has been upddated. To fix this, use the setter function and pass a copy / new object to it to trigger a rerender.
+
+```javascript
+const [user, setUser] = useState({ name: "Leo", age: 32 });
+
+function handleNameChange() {
+  // mutating the state object
+  // this is wrong because: involves mutation + doesn't trigger a rerender
+  user.age = 53;
+}
+```
+
 ## Updating arrays in state
 
 ```
