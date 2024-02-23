@@ -254,5 +254,7 @@ const [nbaPlayers, setNBAPlayers] = useState([
 
 // setting state using the reversed copied array
 // remember, the spread operator (...) creates a different array in memory of the original array
-setNBAPlayers([...nbaPlayers].reverse())
+setNBAPlayers([...nbaPlayers].reverse());
 ```
+
+- **Updating objects inside arrays**
