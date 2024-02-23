@@ -137,7 +137,7 @@ function handleNameChange() {
 
 Arrays are mutable. However, `arrays assigned to state variable should be treated as immutable`. Just like we did with objects above. To update an array state variable, create a copy of the original array or create a new array to pass to the setter function. **Array state variables are read-only**.
 
-- **Adding to a state array**
+- **Adding items to a state array using `spread syntax (...)`**
 
 ✅ Example of the right way to declare and update an array in state:
 
@@ -169,7 +169,7 @@ const [players, setPlayers] = useState([]);
 artists.push({ id: nextId++, name: name });
 ```
 
-- **Removing from a state array**
+- **Removing items from a state array using `filter()`**
 
 Use `filter() to remove item(s) from an array without mutating the original array`. It returns a new copy of the array with the unwanted items removed.
 
@@ -184,4 +184,75 @@ const [powerForwards, setPowerForwards] = useState([
 // removing any player who doesn't play power forward
 // returns a new array of all players that pass the filter condition test
 setPowerForwards(powerForwards.filter((player) => player.position == "PF"));
+```
+
+- **Replacing items in an array using `map()`**
+
+❌ You can't update a state array using this since it's mutating the original array:
+
+```javascript
+arr[2] = "fruits";
+```
+
+Use map() to create a new array & replace items in the array.
+
+```javascript
+const [likes, setLikes] = useState([0, 0, 0]);
+
+// event handler for when a like button is clicked
+function handleLikesIncrement(index) {
+  const newLikesArray = likes.map((likesCount, idx) => {
+    if (idx == index) {
+      // increment the likes of the clicked button
+      return likesCount + 1;
+    } else {
+      // return the original likes count if index doesn't match the index of the clicked button
+      return likesCount;
+    }
+  });
+
+  // updating the state using the new array
+  setLikes(newLikesArray);
+}
+```
+
+- **Inserting an item into the state array at a given position using `spread...` and `slice()`**
+
+Note: slice() returns a copy of the selected section of an array.
+
+```javascript
+const [nbaPlayers, setNBAPlayers] = useState([
+  "Steph Curry",
+  "Klay Thompson",
+  "Kawhi Leonard",
+]);
+
+// on button click event to add nba player at position 3 (could be any other position)
+function handleAddAtPosition() {
+  indexToInsertAt = 1;
+  setNBAPlayers([
+    // copying the nba players from index 0 to index 'indexToInsertAt' (not including)
+    ...nbaPlayers.slice(0, indexToInsertAt),
+    // adding the new player here at 'indexToInsertAt' position
+    "Hakeem Olajuwon",
+    // copying the rest of the array from the 'indexToInsertAt' position to the end of the array
+    ...nbaPlayers.slice(indexToInsertAt),
+  ]);
+}
+```
+
+- **Sorting & reversing state arrays**
+
+You can't use sort() & reverse() methods directly on the state array as they will mutate it. However, you can make a copy of the state array and use the sort() & reverse() methods on it. The copy array can then be used to set / update state.
+
+```javascript
+const [nbaPlayers, setNBAPlayers] = useState([
+  "Steph Curry",
+  "Klay Thompson",
+  "Kawhi Leonard",
+]);
+
+// setting state using the reversed copied array
+// remember, the spread operator (...) creates a different array in memory of the original array
+setNBAPlayers([...nbaPlayers].reverse())
 ```
