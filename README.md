@@ -258,3 +258,5 @@ setNBAPlayers([...nbaPlayers].reverse());
 ```
 
 - **Updating objects inside arrays**
+
+Use the spread... syntex to copy the objects for each copy level just as we did in this [updating objects](https://github.com/2Kelvin/useState-react-hook?tab=readme-ov-file#updating-objects-in-state) section.
