@@ -137,7 +137,7 @@ function handleNameChange() {
 
 Arrays are mutable. However, `arrays assigned to state variable should be treated as immutable`. Just like we did with objects above. To update an array state variable, create a copy of the original array or create a new array to pass to the setter function. **Array state variables are read-only**.
 
-- Adding to a state array
+- **Adding to a state array**
 
 ✅ Example of the right way to declare and update an array in state:
 
@@ -169,7 +169,7 @@ const [players, setPlayers] = useState([]);
 artists.push({ id: nextId++, name: name });
 ```
 
-- Removing from a state array
+- **Removing from a state array**
 
 Use `filter() to remove item(s) from an array without mutating the original array`. It returns a new copy of the array with the unwanted items removed.
 
