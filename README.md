@@ -60,13 +60,13 @@ UseState allows 2 major things:
   setIsChecked(true);
   ```
 
-You can also initalize state variables using [objects](https://github.com/2Kelvin/useState-react-hook?tab=readme-ov-file#updating-objects-in-state) and [arrays](https://github.com/2Kelvin/useState-react-hook?tab=readme-ov-file#updating-arrays-in-state).
+You can also initalize state variables using [objects](https://github.com/2Kelvin/useState-react-hook?tab=readme-ov-file#updating-objects-in-state) and [arrays](https://github.com/2Kelvin/useState-react-hook?tab=readme-ov-file#updating-arrays-in-state). Arrays & objects are mutable in JavaScript, but once you use them as state objects, you need to avoid mutating them directly to change state. Create a new copy or new array /object to change the state. Remember state should be immutable.
 
 `State is isolated and private (independent)` i.e. if you render the same component twice or more, each instance of the component carries with it it's own state; their states are not linked or shared at all. Changing one component's instance doesn't affect the other instances of the same component at all.
 
 ## Updating objects in state
 
-An object can be assigned to useState's state variable. However, `the setter function should update using a copy of the object or make a new object; it should NEVER mutate the original object stored in the state variable`. Treat the object assigned to state as **read-only**.
+Objects are mutable. An object can be assigned to useState's state variable. However, `the setter function should update using a copy of the object or make a new object; it should NEVER mutate the original object stored in the state variable`. Treat the object assigned to state as **read-only**.
 
 Example of declaring and updating an object in state:
 
@@ -135,6 +135,53 @@ function handleNameChange() {
 
 ## Updating arrays in state
 
+Arrays are mutable. However, `arrays assigned to state variable should be treated as immutable`. Just like we did with objects above. To update an array state variable, create a copy of the original array or create a new array to pass to the setter function. **Array state variables are read-only**.
+
+-Adding to a state array
+
+✅ Example of the right way to declare and update an array in state:
+
+```javascript
+const [players, setPlayers] = useState([]);
+
+// update & set state using the spread syntax (...) which copies the original array
+// and adding a new item to the array at the end
+setPlayers([
+  ...players,
+  { name: "Steph Curry", position: "Point Guard", jerseyNo: 30 },
+]);
+
+// adding an item at the start of the array
+setPlayers([
+  { name: "Kawhi Leonard", position: "Small Forward", jerseyNo: 2 },
+  ...players,
+]);
 ```
 
+❌ Example of the wrong way to declare and update an array in state.
+
+```javascript
+const [players, setPlayers] = useState([]);
+
+// wrong for 2 reasons:
+// 1. push mutates the original array which is bad
+// 2. doesn't trigger a rerender since react doesn't know that the array was changed
+artists.push({ id: nextId++, name: name });
+```
+
+-Removing from a state array
+
+Use `filter() to remove item(s) from an array without mutating the original array`. It returns a new copy of the array with the unwanted items removed.
+
+```javascript
+const [powerForwards, setPowerForwards] = useState([
+  { id: 0, name: "Tim Duncan", position: "PF" },
+  { id: 1, name: "Dirk Nowitzki", position: "PF" },
+  { id: 2, name: "Karl Malone", position: "PF" },
+  { id: 3, name: "Michael Jordan", position: "SG" },
+]);
+
+// removing any player who doesn't play power forward
+// returns a new array of all players that pass the filter condition test
+setPowerForwards(powerForwards.filter((player) => player.position == "PF"));
 ```
